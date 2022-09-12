@@ -16,10 +16,10 @@ def get_unique_job_types(path):
     list
         List of unique job types
     """
-    header, *data = read(path)
+    data = read(path)
     group_by_types = {}
     for row in data:
-        type = row[3]
+        type = row["job_type"]
         if type not in group_by_types:
             group_by_types[type] = 0
         group_by_types[type] += 1
